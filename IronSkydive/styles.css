@@ -43,6 +43,7 @@ h3 {
 h4 {
     font-size: 1.5em;
     letter-spacing: 0.4px;
+    margin-bottom: 15px;
 }
 
 h5 {
@@ -52,12 +53,24 @@ h5 {
 /*  NAV-BAR STYLE  */
 .nav-bar {
     background-color: rgb(25, 33, 41);
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
 .nav-bar-item {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 2em;
+}
+
+.nav-bar-ul {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-bar-li{
+    list-style-type: none;
+    text-align: center;
 }
 
 /*  HEADER STYLES  */
@@ -68,6 +81,7 @@ h5 {
     height: 650px;
     background-repeat: no-repeat;
     size: cover;
+    padding-top: 50px;
 }
 
 .header-title{
@@ -90,6 +104,8 @@ h5 {
     font-size: 2em;
     font-weight: 100;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .link-btn {
@@ -102,11 +118,24 @@ h5 {
     text-decoration: none;
 }
 
+.container {
+    width: 1200px;
+    margin: 0 auto; /* to center the content */
+    padding: 75px 0;
+}
+
 /*  SECTION 2 STYLES - STRUCTURE  */
 
 .service-box {
     font-size: 1.7em;
     text-align: center;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px 0 #eee;
+    margin: 50px 5% 0 5%;
+    padding: 20px;
+    width: 40%;
 }
 
 .service-box img {
@@ -118,11 +147,18 @@ h5 {
 #team .section-text {
     font-size: 1.9em;
     text-align: center;
+    width: 60%;
+    margin: 10px auto;
 }
 
 #team .member-name {
     font-size: 1.5em;
     font-weight: 700;
+}
+
+#team hr {
+    margin: 20px auto 30px auto;
+    width: 40%;
 }
 
 /*  SECTION 4 STYLES - SCHEDULES*/
@@ -132,11 +168,19 @@ h5 {
 .footer {
     font-size: 1.9em;
     text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 25px;
 }
 
 .address {
     font-style: normal;
     font-size: 0.8em;
+    margin-bottom: 30px;
+}
+
+.list-stl{
+    list-style: none;
 }
 
 .link {
