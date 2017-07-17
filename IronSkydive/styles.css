@@ -236,6 +236,33 @@ h5 {
     border-bottom: solid 1px black;
 }
 
+.slot-form-container {
+    width: 40%;
+    margin: 18px auto 0 auto;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.slot-form-container .lbl-form {
+    display: block;
+    margin-bottom: 5px;
+    line-height: 15px;
+}
+
+.slot-form-container .inpt-form {
+    height: 20px;
+    outline: none;
+    padding: 3px;
+    width: 100%;
+}
+
+.slot-form-container .btn-form{
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    padding: 9px;
+    margin-top: 15px;
+}
 
 /*  FOOTER STYLE  */
 

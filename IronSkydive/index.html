@@ -144,6 +144,24 @@
                     <td>X</td>
                 </tr>
             </table>
+            <h3>Schedule a Time Slot</h3>
+            <form action="/register" class="slot-form">
+                <div class="slot-form-container">
+                    <label class="lbl-form" for="email">Email</label>
+                    <input class="inpt-form" type="email" name="email" placeholder="Enter your email">
+                    <label class="lbl-form" for="participants">Participants</label>
+                    <input class="inpt-form" type="number" name="participants" placeholder="Number of participants">
+                    <label class="lbl-form" for="date">Date</label>
+                    <input class="inpt-form" type="date" name="date">
+                    <label class="lbl-form" for="time">Time</label>
+                    <select class="inpt-form" name="time">
+                        <option value="early">9:00 - 11:00</option>
+                        <option value="mid">12:00 - 14:00</option>
+                        <option value="late">15:00 - 17:00</option>
+                    </select>
+                    <button class="btn-form" type="submit">Reserve Your Slot!</button>
+                </div>
+            </form>
         </div>
     </section>
 
