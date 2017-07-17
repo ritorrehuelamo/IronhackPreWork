@@ -7,6 +7,45 @@
     padding: 0;
 }
 
+
+/* GENERAL STYLES */
+
+.col {
+    float: left;
+}
+
+
+/* 30% | 30% | 30% */
+
+.col-3 {
+    width: 30%;
+}
+
+
+/* 5% | content | 5% */
+
+.col-middle {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.dark-background {
+    background-color: rgb(25, 33, 41);
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* to center the content */
+    padding: 75px 0;
+}
+
+
 /*  BODY SELECTOR  */
 
 body {
@@ -16,13 +55,18 @@ body {
     font-weight: 300;
 }
 
+
 /*  HEADING PROPERTIES  */
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Roboto Condensed';
 }
 
-h1{
+h1 {
     font-size: 9em;
     text-align: center;
     transform: uppercase;
@@ -50,11 +94,14 @@ h5 {
     font-size: 1.2em;
 }
 
+
 /*  NAV-BAR STYLE  */
+
 .nav-bar {
     background-color: rgb(25, 33, 41);
     padding-top: 14px;
     padding-bottom: 14px;
+    height: 40px;
 }
 
 .nav-bar-item {
@@ -68,39 +115,46 @@ h5 {
     margin: 0 auto;
 }
 
-.nav-bar-li{
+.nav-bar-li {
     list-style-type: none;
     text-align: center;
+    float: left;
+    width: 33%;
 }
+
 
 /*  HEADER STYLES  */
 
-.header{
+.header {
     background-image: url('https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/ironhack-skydive-background.jpg');
     background-position: 0 0;
     height: 650px;
     background-repeat: no-repeat;
     size: cover;
     padding-top: 50px;
+    position: relative;
 }
 
-.header-title{
+.header-title {
     color: rgb(255, 255, 255);
     text-shadow: #020819 8px -20px 9px;
 }
 
 .quote {
     font-size: 2.5em;
+    position: absolute;
+    left: 10%;
+    bottom: 15vh;
 }
+
 
 /*  SECTION 1 STYLES - GENERAL INFORMATION  */
 
-.dark-background{
-    background-color: rgb(25, 33, 41);
-    color: rgb(255, 255, 255);
+#general-information {
+    height: 350px;
 }
 
-.text{
+.text {
     font-size: 2em;
     font-weight: 100;
     text-align: center;
@@ -116,17 +170,19 @@ h5 {
     letter-spacing: 0.5px;
     text-align: center;
     text-decoration: none;
+    display: block;
+    width: 150px;
+    margin: 40px auto 0 auto;
+    padding: 14px 20px 14px 20px;
+    border: 2px solid black;
+    opacity: 0.8;
 }
 
-.container {
-    width: 1200px;
-    margin: 0 auto; /* to center the content */
-    padding: 75px 0;
-}
 
 /*  SECTION 2 STYLES - STRUCTURE  */
 
 .service-box {
+    float: left;
     font-size: 1.7em;
     text-align: center;
     border: 2px solid #eee;
@@ -142,6 +198,7 @@ h5 {
     width: 125px;
 }
 
+
 /*  SECTION 3 STYLES - TEAM  */
 
 #team .section-text {
@@ -154,6 +211,8 @@ h5 {
 #team .member-name {
     font-size: 1.5em;
     font-weight: 700;
+    display: block;
+    text-align: center;
 }
 
 #team hr {
@@ -161,9 +220,15 @@ h5 {
     width: 40%;
 }
 
+
 /*  SECTION 4 STYLES - SCHEDULES*/
 
+
 /*  FOOTER STYLE  */
+
+.footer-info{
+    float: left;
+}
 
 .footer {
     font-size: 1.9em;
@@ -179,11 +244,17 @@ h5 {
     margin-bottom: 30px;
 }
 
-.list-stl{
-    list-style: none;
+.list-stl {
+    list-style-type: none;
 }
 
 .link {
     color: rgb(67, 163, 230);
     text-decoration: none;
+}
+
+.map-frame{
+    float: right;
+    height: 375px;
+    width: 60%;
 }
