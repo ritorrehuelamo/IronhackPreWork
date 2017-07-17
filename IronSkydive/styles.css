@@ -223,10 +223,23 @@ h5 {
 
 /*  SECTION 4 STYLES - SCHEDULES*/
 
+.schedule-table {
+    margin: 0 auto 40px auto;
+    font-size: 1.5em;
+}
+
+.schedule-table tr th {
+    padding-right: 15px;
+}
+
+.schedule-table tr th, td{
+    border-bottom: solid 1px black;
+}
+
 
 /*  FOOTER STYLE  */
 
-.footer-info{
+.footer-info {
     float: left;
 }
 
@@ -253,7 +266,7 @@ h5 {
     text-decoration: none;
 }
 
-.map-frame{
+.map-frame {
     float: right;
     height: 375px;
     width: 60%;
