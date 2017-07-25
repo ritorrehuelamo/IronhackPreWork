@@ -1,6 +1,11 @@
 // Rover Object Goes Here
 // ======================
 
+/**
+ * Objeto rover
+ * @type {Object}
+ */
+
 var rover = {
   direccion: "N",
   x: 0,
@@ -10,15 +15,21 @@ var rover = {
 
 // ======================
 
+/**
+ * Funcion para saber la posicion del rover
+ * @param  {object} rover objeto rover
+ */
 function position(rover) {
   console.log("Posición: " + rover.direccion);
 }
 
-// TODO: Implementar los comandos de movimiento dentro de la
-// funcion roverCommands dentro de un switch y ¿meterlo dentro
-// de un do{}while(); para que se haga un bucle hasta la condicion
-// de salida?
 
+/**
+ * Funcion que gestiona la cadena de comandos para la
+ * gestion del rover y muestra el travelLog.
+ * @param  {string} command cadena de comandos para procesar
+ * @param  {object} rover objeto rover
+ */
 function roverCommands(command, rover) {
 
     for (var i = 1; i < command.length; i++) {
@@ -48,7 +59,10 @@ function roverCommands(command, rover) {
 
 
 // ======================
-/*eslint no-console: "error"*/
+/**
+ * Funcion para girar el rover hacia la derecha
+ * @param  {object} rover objeto rover
+ */
 function turnLeft(rover) {
   switch (rover.direccion) {
     case "N":
@@ -76,7 +90,10 @@ function turnLeft(rover) {
   }
 }
 
-/*eslint no-console: "error"*/
+/**
+ * Funcion para girar el rover hacia la izquierda
+ * @param  {object} rover objeto rover
+ */
 function turnRight(rover) {
   switch (rover.direccion) {
     case "N":
@@ -104,7 +121,11 @@ function turnRight(rover) {
   }
 }
 
-/*eslint no-console: "error"*/
+/**
+ * Funcion de movimiento hacia delante hacia la direccion
+ * que se marque
+ * @param  {object} rover objeto rover
+ */
 function moveForward(rover) {
   console.log("Posición: " + rover.x + "," + rover.y + "\nDireccion: " + rover.direccion);
   if (rover.x >= 0 && rover.x <= 10) {
