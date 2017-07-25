@@ -2,125 +2,165 @@
 // ======================
 
 var rover = {
-    direccion: "N",
-    posX: 0,
-    posY: 1
+  direccion: "N",
+  x: 0,
+  y: 0,
+  travelLog: []
 };
-
-// Funcion de posicion del rover
-/**
- * function position -> Muestra la posicion y direccion del rover
- * @param  {object} rover Objeto rover
- */
-/*eslint no-console: "error"*/
-function position(rover) {
-    console.log("Dirección actual del rover: "+ rover.direccion);
-    console.log("Posición en coordenadas: " + rover.posX + "," + rover.posY);
-}
 
 // ======================
 
-// TODO: Girar el rover en todas direcciones hacia la izquierda
-/**
- * function turnLeft -> Gira hacia la izquierda el rover
- * @param  {object} rover Objeto rover
- */
+function position(rover) {
+  console.log("Posición: " + rover.direccion);
+}
+
+// TODO: Implementar los comandos de movimiento dentro de la
+// funcion roverCommands dentro de un switch y ¿meterlo dentro
+// de un do{}while(); para que se haga un bucle hasta la condicion
+// de salida?
+
+function roverCommands(command, rover) {
+
+    for (var i = 1; i < command.length; i++) {
+        var letra = command.substring([i], ([i]-1));
+        console.log("Comando " + letra + "\n");
+        switch (letra) {
+            case "l":
+                turnLeft(rover);
+                break;
+            case "r":
+                turnRight(rover);
+                break;
+            case "f":
+                moveForward(rover);
+                break;
+            default:
+                console.log("No se reconoce el comando.");
+        }
+    }
+
+    console.log("Rover Travel Log: ");
+    for (var x = 0; x < rover.travelLog.length; x++) {
+            console.log(rover.travelLog[x]);
+    }
+
+}
+
+
+// ======================
 /*eslint no-console: "error"*/
 function turnLeft(rover) {
-    console.log("turnLeft was called!");
-    console.log("Direccion actual del rover: " + rover.direccion);
-    switch (rover.direccion) {
-        case "N":
-            rover.direccion = "W";
-            break;
-        case "W":
-            rover.direccion = "S";
-            break;
-        case "S":
-            rover.direccion = "E";
-            break;
-        case "E":
-            rover.direccion = "N";
-            break;
-        default:
-    }
-    console.log("Nueva dirección del rover: " + rover.direccion);
+  switch (rover.direccion) {
+    case "N":
+      rover.direccion = "W";
+      console.log("Girando rover de N a W");
+      console.log("Posición: " + rover.direccion);
+      break;
+    case "W":
+      rover.direccion = "S";
+      console.log("Girando rover de W a S");
+      console.log("Posición: " + rover.direccion);
+      break;
+    case "S":
+      rover.direccion = "E";
+      console.log("Girando rover de S a E");
+      console.log("Posición: " + rover.direccion);
+      break;
+    case "E":
+      rover.direccion = "N";
+      console.log("Girando rover de E a N");
+      console.log("Posición: " + rover.direccion);
+      break;
+    default:
+      console.log("Dirección no disponible.");
+  }
 }
 
-// TODO: Girar el rover en todas direcciones hacia la derecha
-/**
- * function turnRight -> Gira hacia la derecha el rover
- * @param  {object} rover Objeto rover
- */
 /*eslint no-console: "error"*/
 function turnRight(rover) {
-    console.log("turnRight was called!");
-    console.log("Direccion actual del rover: " + rover.direccion);
-    switch (rover.direccion) {
-        case "N":
-            rover.direccion = "E";
-            break;
-        case "E":
-            rover.direccion = "S";
-            break;
-        case "S":
-            rover.direccion = "W";
-            break;
-        case "W":
-            rover.direccion = "N";
-            break;
-        default:
-    }
-    console.log("Nueva dirección del rover: " + rover.direccion);
+  switch (rover.direccion) {
+    case "N":
+      rover.direccion = "E";
+      console.log("Girando rover de N a E");
+      console.log("Posición: " + rover.direccion);
+      break;
+    case "E":
+      rover.direccion = "S";
+      console.log("Girando rover de E a S");
+      console.log("Posición: " + rover.direccion);
+      break;
+    case "S":
+      rover.direccion = "W";
+      console.log("Girando rover de S a W");
+      console.log("Posición: " + rover.direccion);
+      break;
+    case "W":
+      rover.direccion = "N";
+      console.log("Girando rover de W a N");
+      console.log("Posición: " + rover.direccion);
+      break;
+    default:
+      console.log("Dirección no disponible.");
+  }
 }
 
-// TODO: Mover el rover en todas direcciones hacia alante
-/**
- * function moveForward -> Mueve hacia delante el rover
- * @param  {object} rover Objeto rover
- */
 /*eslint no-console: "error"*/
 function moveForward(rover) {
-    console.log("moveForward was called");
-    switch (rover.direccion) {
+  console.log("Posición: " + rover.x + "," + rover.y + "\nDireccion: " + rover.direccion);
+  if (rover.x >= 0 && rover.x <= 10) {
+    if (rover.y >= 0 && rover.y <= 10) {
+      switch (rover.direccion) {
         case "N":
-            rover.posX+=1;
-            break;
+          rover.y -= 1;
+          if (rover.y > -1) {
+              rover.travelLog.push([rover.x, rover.y]);
+            console.log("Posición: " + rover.x + "," + rover.y);
+          } else {
+            rover.y = 0;
+            rover.travelLog.push([rover.x, rover.y]);
+            console.log("No se puede ir hacia el norte, en el límite de la cuadricula 10x10.");
+          }
+          break;
         case "E":
-            rover.posY+=1;
-            break;
+          rover.x += 1;
+          if (rover.x < 11) {
+              rover.travelLog.push([rover.x, rover.y]);
+              console.log("Posición: " + rover.x + "," + rover.y);
+          }else{
+              rover.x = 10;
+              rover.travelLog.push([rover.x, rover.y]);
+              console.log("No se puede ir hacia el Este, en el límite de la cuadricula 10x10.");
+          }
+          break;
         case "S":
-            rover.posX+=1;
-            break;
+          rover.y += 1;
+          if (rover.y < 11) {
+              rover.travelLog.push([rover.x, rover.y]);
+              console.log("Posición: " + rover.x + "," + rover.y);
+          }else{
+              rover.y = 10;
+              rover.travelLog.push([rover.x, rover.y]);
+              console.log("No se puede ir hacia el Sur, en el límite de la cuadricula 10x10.");
+          }
+          break;
         case "W":
-            rover.posY-=1;
-            break;
+          rover.x -= 1;
+          if (rover.x > -1) {
+              rover.travelLog.push([rover.x, rover.y]);
+            console.log("Posición: " + rover.x + "," + rover.y);
+          } else {
+            rover.x = 0;
+            rover.travelLog.push([rover.x, rover.y]);
+            console.log("No se puede ir hacia el Oeste, en el límite de la cuadricula 10x10.");
+          }
+          break;
         default:
+          console.log("Movimiento no permitido.");
+      }
+    } else {
+      console.log("No se puede mover fuera de la cuadricula de 10x10.");
     }
-    console.log("Nueva posición: " + rover.posX + "," + rover.posY);
+  } else {
+    console.log("No se puede mover fuera de la cuadricula de 10x10.");
+  }
 }
-
-/**
- * funcion tracertLog -> Sigue todos los movimientos del rover
- * y hace un registro de éstos
- * @type {object} rover
- */
-function tracertLog(rover) {
-
-}
-
-
-/*
-    Codigo de ejemplo -> borrar antes de hacer commit
-
- if (rover.direccion === "N") {
-     rover.direccion = "W";
-     if ((rover.posY > 0 && rover.posY < 10)) {
-         rover.posX = 0;
-         rover.posY-=1;
-         console.log("Rover gira hacia: " + rover.direccion + "\nPosición: " + rover.posX +","+ rover.posY);
-     }else {
-         console.log("El rover no se puede mover hacia el Oeste porque esta en el límite del mapa");
-     }
- }
- */
